@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>tumblr Chat Posts</title>
+
+    <link rel='stylesheet' href='css/bootstrap.css' type='text/css'>
+    <link rel='stylesheet' href='css/bootstrap.min.css' type='text/css'>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row posts">
+        </div>
+       <script id="template" type="text/x-handlebars-template">
+            <div class="jumbotron">
+              <h2 class="display-3">{{response.blog.title}}</h2>
+              <h5 class="title">{{response.blog.ask_page_title}}</h5>
+              <h4 class="lead">{{response.blog.description}}</h4>
+            </div>
+
+            <div class="row ">
+            {{#each response.posts}}
+            <div class="col-lg-6">
+              <h4 class="blog_name">{{blog_name}}</h4>
+              <h5 class="body">{{body}}</h5>
+                <br><a href='{{response.blog.url}}'>{{response.blog.url}}</a>
+                
+                  <p><a class="btn btn-primary btn-lg" role="button" href={{post_url}}>open dialogue</a></p>
+                
+            </div>
+            {{/each}}
+        </script>
+</body>
+
+</html>
